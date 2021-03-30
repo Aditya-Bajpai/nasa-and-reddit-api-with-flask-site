@@ -1,4 +1,4 @@
-#A flask app made with the Reddit and NASA API.
+# A flask app made with the Reddit and NASA API.
 
 
 *Gets the post in the "Hot" section in the r/aww subreddit*
