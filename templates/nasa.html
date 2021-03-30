@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+
+{% block body %}
+<style>
+img{
+        height: 500px;
+        width: 500px;
+    }
+    .card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    display: grid;
+    place-items: center;
+}
+h1{
+    text-align: center;
+}
+</style>
+<h1>NASA picture of the day</h1>
+<div class="card" style="width: 30rem;">
+    <img src="{{picture}}" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <a href="/" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+{% endblock %}
