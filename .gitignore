@@ -1,1 +1,6 @@
 config.py
+
+__pycache__
+
+
+.bash_profile_save
