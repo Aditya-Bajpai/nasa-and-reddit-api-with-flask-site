@@ -22,7 +22,12 @@
         margin-bottom: 10px; /* Added */
         display: grid;
         place-items: center;
+        
 }
+        .author{
+            height : 50px;
+            width : 50px;
+        }
     </style>
     <a href="/nasa">Check out the NASA's astronomy picture of the day while you're at it</a>
     {% for hot in hot %}
@@ -31,14 +36,14 @@
             <img src="{{hot.url}}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{hot.title}}</h5>
-                <p>by - {{hot.author}}</p>
+                <p>by - {{hot.author}}</p><img src="{{hot.author.icon_img}}" class = "author">
                 <p>👍{{hot.score}}</p>
                 <a href="{{hot.url}}" class="btn btn-primary" target="_blank" rel ="noopener noreferrer">Image</a>
             </div>
         </div>
     {% endif %}
     {% endfor %}
-    <a href="/nasa">NASA</a>
+    <a href="{{ url_for('nasa') }}">NASA</a>
     {% endblock %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
