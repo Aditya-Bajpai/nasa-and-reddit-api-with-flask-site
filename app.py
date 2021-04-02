@@ -12,7 +12,7 @@ pp = PrettyPrinter()
 response = apod_object_parser.get_data(api_key)
 
 
-picture = apod_object_parser.get_hdurl(response)
+picture = apod_object_parser.get_url(response)
 
 reddit = praw.Reddit(client_id=client_id,
                     client_secret=client_secret,
@@ -23,6 +23,8 @@ reddit = praw.Reddit(client_id=client_id,
 
 subreddit = reddit.subreddit('aww')
 hot  = subreddit.hot(limit = 50)
+
+print(picture)
 
 
 title = apod_object_parser.get_title(response)

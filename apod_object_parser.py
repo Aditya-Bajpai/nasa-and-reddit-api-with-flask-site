@@ -2,6 +2,7 @@ import requests
 import json
 import os
 from PIL import Image
+from config import api_key
 
 def get_data(api_key):
     raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={api_key}').text
@@ -19,9 +20,9 @@ def get_explaination(response):
     return explaination
 
 
-def get_hdurl(response):
-    hdurl = response['hdurl']
-    return hdurl
+#def get_hdurl(response):
+    #hdurl = response['hdurl']
+    #return hdurl
 
 
 def get_media_type(response):

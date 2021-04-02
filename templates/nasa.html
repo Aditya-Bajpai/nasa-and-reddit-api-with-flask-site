@@ -20,10 +20,17 @@ h1{
 </style>
 <h1>NASA picture of the day</h1>
 <div class="card" style="width: 30rem;">
-    <img src="{{picture}}" class="card-img-top">
+    {% if "https://www.youtube.com/embed" in picture %}
+        <iframe width="420" height="315"
+        src="{{picture}}">
+        </iframe>
+    {% else %}
+        <img src="{{picture}}" class="card-img-top" alt="...">
+    {% endif %}
     <div class="card-body">
         <h5 class="card-title">{{title}}</h5>
         <a href="/" class="btn btn-primary">Go somewhere</a>
     </div>
 </div>
+
 {% endblock %}
