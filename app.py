@@ -24,7 +24,6 @@ reddit = praw.Reddit(client_id=client_id,
 subreddit = reddit.subreddit('aww')
 hot  = subreddit.hot(limit = 50)
 
-print(picture)
 
 
 title = apod_object_parser.get_title(response)
