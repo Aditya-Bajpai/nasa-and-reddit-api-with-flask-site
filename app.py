@@ -12,6 +12,8 @@ pp = PrettyPrinter()
 response = apod_object_parser.get_data(api_key)
 
 
+
+
 picture = apod_object_parser.get_url(response)
 
 reddit = praw.Reddit(client_id=client_id,
@@ -26,6 +28,7 @@ hot  = subreddit.hot(limit = 50)
 
 
 
+
 title = apod_object_parser.get_title(response)
 @app.route('/')
 def main():
@@ -35,6 +38,7 @@ def main():
 def nasa():
     return render_template('nasa.html' , picture=picture, title = title)
 
+print(picture)
 
 if __name__ == "__main__":
     app.run(debug=True)
