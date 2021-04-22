@@ -5,6 +5,7 @@ from pprint import PrettyPrinter
 import apod_object_parser
 import os
 from config import api_key , password , client_secret , client_id
+import requests
 app = Flask(__name__)
 pp = PrettyPrinter()
 
@@ -29,6 +30,7 @@ hot  = subreddit.hot(limit = 50)
 
 
 
+
 title = apod_object_parser.get_title(response)
 @app.route('/')
 def main():
@@ -36,7 +38,8 @@ def main():
 
 @app.route('/nasa')
 def nasa():
-    return render_template('nasa.html' , picture=picture, title = title)
+    return render_template('nasa.html' , picture=picture,title=title)
+
 
 print(picture)
 
